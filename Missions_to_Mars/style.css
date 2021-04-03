@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* giving the body a black background so it looks like Mars is hovering in space. */
+body {background:black;}
+
+h2 {font-family:Verdana, Geneva, Tahoma, sans-serif}
+h2 {color:white;}
+
+p {font-family:Verdana, Geneva, Tahoma, sans-serif}
+p {color:white;}
+
+a {color:lightskyblue;}
