@@ -71,38 +71,18 @@
         </div>
     </div>
 
-
+{% for hemisphere in mars.hemisphere_images %}
     <div class="row">
         <div class="col-md-3">
-            <p>
-            <img src="{{ mars.hemisphere_image}}" class="img-fluid" alt="the Cerberus Hemisphere of Mars"><br>
-            This image of the Cerberus Hemisphere of Mars is centered at 3&#0176; lat, 185&#0176; long.
-            </p>
+            <div class="thumbnail">
+            <img src="{{hemisphere.link | default('static/images/error.png', true)}}" alt="Mars hemisphere image">
+                <div class="caption">
+                    <h3>{{hemisphere.title}}</h3>
+                </div>
+            </div>
         </div>
-
-        <div class="col-md-3">
-            <p>
-            <img src="{{mars.hemisphere_image}}" class="img-fluid" alt="the Schiaparelli Hemisphere of Mars"><br>
-            This image of the Schiaparelli Hemisphere of Mars extends from -60&#0176; to 60&#0176; lat and from 260&#0176; to 30&#0176; long.
-            </p>
-        </div>
-
-        <div class="col-md-3">
-            <p>
-            <img src="{{mars.hemisphere_image}}" class="img-fluid" alt="the Syrtis Major Hemisphere of Mars"><br>
-            This image of the Syrtis Major Hemisphere of Mars extends from -60&#0176; to 60&#0176; lat and from 260&#0176; to 350&#0176; long.
-            </p>
-        </div>
-
-        <div class="col-md-3">
-            <p>
-            <img src="{{mars.hemisphere_image}}" class="img-fluid" alt="the Valles Marineris Hemisphere of Mars"><br>
-            This image of the Valles Marineris Hemisphere of Mars is centered at -8&#0176; lat, 78&#0176; long.
-            </p>
-        </div>
-
+    {% endfor %}
     </div>
-
 
     <div class="row">
         <!-- whole screen width (12/12)
