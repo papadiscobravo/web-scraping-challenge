@@ -31,8 +31,8 @@
         <div class="col-md-6">
             <p>
             <!--figure out how to insert NASA's latest Mars headline + graf1
-                from the Python variables [news_title]--><b>#</b><br>
-                <!--and [news_graf]-->#<br>
+                from the Python variables [news_title]--><b>{{ mars.news_title }}</b><br>
+                <!--and [news_graf]-->{{ mars.news_graf }}<br>
                 <i>from <a href="https://redplanetscience.com" target="_blank">NASA Mars News</a></i>         
             </p>
         </div>
@@ -43,7 +43,7 @@
             <p>
             <!--figure out how to insert latest image here
                 from the Python variable [featured_image_url]-->
-            <img src="https://www.spaceimages-mars.com/image/featured/mars1.jpg" class="img-fluid" alt="latest image from spaceimages-mars.com"><br>
+            <img src="{{ mars.featured_image }}" class="img-fluid" alt="latest image from spaceimages-mars.com"><br>
             <i>from the Jet Propulsion Laboratory's <a href="http://www.spaceimages-mars.com" target="_blank">Mars Space Images</a><br><br></i>
             </p>
         </div>
@@ -54,8 +54,10 @@
         <!-- half of screen width (6/12)
             column 1 of 2 -->
         <div class="col-md-6">
+            Mars-Earth comparison<br>
+            {{ mars.data_table | safe }}
             <p>
-            <a href="table.html" target="_blank">How does Mars compare with Earth?</a><br>
+            <!--    <a href="table.html" target="_blank">How does Mars compare with Earth?</a><br>-->
             <i>from <a href="https://galaxyfacts-mars.com">galaxyfacts-mars.com</i></a>
             <br><br>
             </p>
@@ -73,28 +75,28 @@
     <div class="row">
         <div class="col-md-3">
             <p>
-            <img src="https://marshemispheres.com/images/full.jpg" class="img-fluid" alt=[extent]1><br>
+            <img src="{{ mars.hemisphere_image}}" class="img-fluid" alt="the Cerberus Hemisphere of Mars"><br>
             This image of the Cerberus Hemisphere of Mars is centered at 3&#0176; lat, 185&#0176; long.
             </p>
         </div>
 
         <div class="col-md-3">
             <p>
-            <img src="https://marshemispheres.com/images/schiaparelli_enhanced-full.jpg" class="img-fluid" alt=[extent]2><br>
+            <img src="{{mars.hemisphere_image}}" class="img-fluid" alt="the Schiaparelli Hemisphere of Mars"><br>
             This image of the Schiaparelli Hemisphere of Mars extends from -60&#0176; to 60&#0176; lat and from 260&#0176; to 30&#0176; long.
             </p>
         </div>
 
         <div class="col-md-3">
             <p>
-            <img src="https://marshemispheres.com/images/syrtis_major_enhanced-full.jpg" class="img-fluid" alt=[extent]3><br>
+            <img src="{{mars.hemisphere_image}}" class="img-fluid" alt="the Syrtis Major Hemisphere of Mars"><br>
             This image of the Syrtis Major Hemisphere of Mars extends from -60&#0176; to 60&#0176; lat and from 260&#0176; to 350&#0176; long.
             </p>
         </div>
 
         <div class="col-md-3">
             <p>
-            <img src="https://marshemispheres.com/images/valles_marineris_enhanced-full.jpg" class="img-fluid" alt=[extent]4><br>
+            <img src="{{mars.hemisphere_image}}" class="img-fluid" alt="the Valles Marineris Hemisphere of Mars"><br>
             This image of the Valles Marineris Hemisphere of Mars is centered at -8&#0176; lat, 78&#0176; long.
             </p>
         </div>
